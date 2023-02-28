@@ -8,36 +8,28 @@
 
     <ImageView
         android:id="@+id/ivPhoto"
-        android:layout_width="204dp"
+        android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_marginTop="2dp"
-
         android:scaleType="centerCrop"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnOpenActivity5"
         app:layout_constraintTop_toBottomOf="@+id/btnTakePhoto" />
 
     <Button
         android:id="@+id/btnTakePhoto"
-        android:layout_width="204dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
         android:text="Choose Photo"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnOpenActivity2"
         app:layout_constraintTop_toBottomOf="@+id/btnRequestPermissions" />
 
     <Button
         android:id="@+id/btnOpenActivity1"
-        android:layout_width="204dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="left|center"
+        android:gravity="left"
         android:text="1.Счетчик"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,31 +37,24 @@
         android:id="@+id/btnOpenActivity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:gravity="left|center_vertical"
         android:text="2.Анкета"
-        app:layout_constraintEnd_toStartOf="@+id/btnTakePhoto"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity1" />
 
     <Button
         android:id="@+id/btnOpenActivity3"
-        android:layout_width="204dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:gravity="left|center_vertical"
-        android:text="3.Выбираем картинку"
-        app:layout_constraintEnd_toEndOf="@+id/btnOpenActivity4"
+        android:text="3.Выбор картинки"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity2" />
 
     <Button
         android:id="@+id/btnOpenActivity4"
-        android:layout_width="204dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:gravity="left|center_vertical"
         android:text="4.Сумма двух чисел"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,21 +62,17 @@
 
     <Button
         android:id="@+id/btnOpenActivity5"
-        android:layout_width="204dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:gravity="left|center_vertical"
         android:text="5.Заказ для бургера"
-        app:layout_constraintEnd_toStartOf="@+id/ivPhoto"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity4" />
 
     <Button
         android:id="@+id/btnOpenActivity6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_height="50dp"
         android:gravity="left|center_vertical"
         android:text="6.Custom TOAST"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,8 +81,7 @@
     <Button
         android:id="@+id/btnOpenActivity7"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_height="50dp"
         android:gravity="left|center_vertical"
         android:text="7.Передать данные"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,21 +95,22 @@
         android:text="ENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRequestPermissions"
-        android:layout_width="204dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
         android:backgroundTint="@android:color/holo_red_dark"
         android:text="Permission"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnOpenActivity1"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.56" />
 </androidx.constraintlayout.widget.ConstraintLayout>
