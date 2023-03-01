@@ -76,6 +76,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+        btnOpenActivity8.setOnClickListener {
+            Intent(this, TenthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
         btnEnter.setOnClickListener {
             finish()
         }
