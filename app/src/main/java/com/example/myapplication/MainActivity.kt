@@ -86,6 +86,16 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+        btnOpenActivity12.setOnClickListener {
+            Intent(this, TwelfthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        btnOpenActivity13.setOnClickListener {
+            Intent(this, ThirteenActivity::class.java).also {
+                startActivity(it)
+            }
+        }
         btnEnter.setOnClickListener {
             finish()
         }
