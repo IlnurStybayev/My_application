@@ -1,178 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivPhoto"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnOpenActivity4"
-            app:layout_constraintTop_toBottomOf="@+id/btnTakePhoto" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnTakePhoto"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Choose Photo"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnOpenActivity2"
-            app:layout_constraintTop_toBottomOf="@+id/btnRequestPermissions" />
+            <ImageView
+                android:id="@+id/ivPhoto"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnOpenActivity4"
+                app:layout_constraintTop_toBottomOf="@+id/btnTakePhoto" />
 
-        <Button
-            android:id="@+id/btnOpenActivity1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="1.Счетчик"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Choose Photo"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnOpenActivity2"
+                app:layout_constraintTop_toBottomOf="@+id/btnRequestPermissions" />
 
-        <Button
-            android:id="@+id/btnOpenActivity2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="2.Анкета"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity1" />
+            <Button
+                android:id="@+id/btnOpenActivity1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="1.Счетчик"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread" />
 
-        <Button
-            android:id="@+id/btnOpenActivity3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="3.Выбор картинки"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity2" />
+            <Button
+                android:id="@+id/btnOpenActivity2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="2.Анкета"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity1" />
 
-        <Button
-            android:id="@+id/btnOpenActivity4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="4.Сумма двух чисел"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity3" />
+            <Button
+                android:id="@+id/btnOpenActivity3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="3.Выбор картинки"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity4"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity2" />
 
-        <Button
-            android:id="@+id/btnOpenActivity5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="5.Заказ для бургера"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity4" />
+            <Button
+                android:id="@+id/btnOpenActivity4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="4.Сумма двух чисел"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity5"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity3" />
 
-        <Button
-            android:id="@+id/btnOpenActivity6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="6.Custom TOAST"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity5" />
+            <Button
+                android:id="@+id/btnOpenActivity5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="5.Заказ для бургера"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity6"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity4" />
 
-        <Button
-            android:id="@+id/btnOpenActivity7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="7.Передать данные"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity6" />
+            <Button
+                android:id="@+id/btnOpenActivity6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="6.Custom TOAST"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity7"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity5" />
 
-        <Button
-            android:id="@+id/btnOpenActivity8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="8.Диалоги"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity7" />
+            <Button
+                android:id="@+id/btnOpenActivity7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="7.Передать данные"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity8"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity6" />
 
-        <Button
-            android:id="@+id/btnOpenActivity9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="9.Spiner"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity8" />
+            <Button
+                android:id="@+id/btnOpenActivity8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="8.Диалоги"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity9"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity7" />
 
-        <Button
-            android:id="@+id/btnOpenActivity12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="10. Recyclerview"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity9" />
+            <Button
+                android:id="@+id/btnOpenActivity9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="9.Spiner"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity12"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity8" />
 
-        <Button
-            android:id="@+id/btnOpenActivity13"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:text="11.Fragments"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity12" />
+            <Button
+                android:id="@+id/btnOpenActivity12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="10. Recyclerview"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity13"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity9" />
 
-        <Button
-            android:id="@+id/btnEnter"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:text="EXIT"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/btnOpenActivity13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="11.Fragments"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity12" />
 
-        <Button
-            android:id="@+id/btnRequestPermissions"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Permission"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnOpenActivity1"
-            app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
+            <Button
+                android:id="@+id/btnEnter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="EXIT"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="181dp" />
+            <Button
+                android:id="@+id/btnRequestPermissions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="Permission"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnOpenActivity1"
+                app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="181dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/flFragmentNav"
@@ -187,8 +216,18 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="677dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

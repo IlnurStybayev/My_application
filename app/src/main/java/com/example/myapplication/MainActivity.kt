@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val profileFragment = ProfileFragment()
         val messagesFragment = MessagesFragment()
 SetCurrentFragment(homeFragment)
-        bottomNavigationView.setOnNavigationItemReselectedListener {
+        bottomNavigationView.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.miHome -> SetCurrentFragment(homeFragment)
                 R.id.miProfile -> SetCurrentFragment(profileFragment)
