@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.main_layout.*
 
@@ -24,6 +25,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_layout)
+
+        val homeFragment = HomeFragment()
+        val profileFragment = ProfileFragment()
+        val messagesFragment = MessagesFragment()
+SetCurrentFragment(homeFragment)
+        bottomNavigationView.setOnNavigationItemReselectedListener {
+            when(it.itemId){
+                R.id.miHome -> SetCurrentFragment(homeFragment)
+                R.id.miProfile -> SetCurrentFragment(profileFragment)
+                R.id.miMessages -> SetCurrentFragment(messagesFragment)
+            }
+            true
+        }
+        bottomNavigationView.getOrCreateBadge(R.id.miMessages).apply {
+            number = 10
+            isVisible = true
+        }
 
         updateButtonState()
 
@@ -101,9 +119,14 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    private fun SetCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragmentNav, fragment)
+            commit()
+        }
 
 
-private fun hasWriteExternalStoragePermission() =
+    private fun hasWriteExternalStoragePermission() =
     ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
 
 private fun hasLocationForegroundPermission() =
