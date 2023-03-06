@@ -114,6 +114,11 @@ SetCurrentFragment(homeFragment)
                 startActivity(it)
             }
         }
+        btnOpenNineActivity.setOnClickListener {
+            Intent(this, NinthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
         btnEnter.setOnClickListener {
             finish()
         }
