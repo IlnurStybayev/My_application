@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_fourteenth.*
 import kotlinx.android.synthetic.main.activity_twelfth.*
 
 class TwelfthActivity : AppCompatActivity() {

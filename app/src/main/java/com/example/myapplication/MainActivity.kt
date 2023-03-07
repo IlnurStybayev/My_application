@@ -122,6 +122,11 @@ SetCurrentFragment(homeFragment)
                 startActivity(it)
             }
         }
+        btnOpenNineActivity.setOnClickListener {
+            Intent(this, NinthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
         btnOpenActivity8.setOnClickListener {
             Intent(this, TenthActivity::class.java).also {
                 startActivity(it)
@@ -142,11 +147,12 @@ SetCurrentFragment(homeFragment)
                 startActivity(it)
             }
         }
-        btnOpenNineActivity.setOnClickListener {
-            Intent(this, NinthActivity::class.java).also {
+        btnOpenActivity14.setOnClickListener {
+            Intent(this, FourteenthActivity::class.java).also {
                 startActivity(it)
             }
         }
+
         btnEnter.setOnClickListener {
             finish()
         }
