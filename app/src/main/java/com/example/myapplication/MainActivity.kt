@@ -10,10 +10,12 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.main_layout.*
@@ -21,10 +23,36 @@ import kotlinx.android.synthetic.main.main_layout.*
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
+    //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
+    lateinit var toggle: ActionBarDrawerToggle
+    //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
+
     private var permissionsGranted = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_layout)
+
+//SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.miItem1 -> Toast.makeText(applicationContext,
+                    "Click Item 1", Toast.LENGTH_SHORT).show()
+                R.id.miItem2 -> Toast.makeText(applicationContext,
+                    "Click Item 2", Toast.LENGTH_SHORT).show()
+                R.id.miItem3 -> Toast.makeText(applicationContext,
+                    "Click Item 3", Toast.LENGTH_SHORT).show()
+                R.id.miItem4 -> Toast.makeText(applicationContext,
+                    "Click Item 4", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
+
+//SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
 
         val homeFragment = HomeFragment()
         val profileFragment = ProfileFragment()
@@ -124,6 +152,11 @@ SetCurrentFragment(homeFragment)
         }
 
     }
+
+
+    ////SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
+
+    //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
     private fun SetCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragmentNav, fragment)
@@ -215,7 +248,10 @@ private fun updateButtonState() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        if(toggle.onOptionsItemSelected(item)){
+            return true
+        }
         when(item.itemId){
             R.id.miAddContacts -> Toast.makeText(this,"You clicked on Add contacts", Toast.LENGTH_SHORT).show()
             R.id.miFavorites -> Toast.makeText(this,"You clicked on Favorites", Toast.LENGTH_SHORT).show()
@@ -225,6 +261,7 @@ private fun updateButtonState() {
         }
         return true
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
