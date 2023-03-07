@@ -116,7 +116,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
-                android:text="6.Custom TOAST"
+                android:text="6.TOAST/Notifications"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity7"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
