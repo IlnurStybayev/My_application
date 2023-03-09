@@ -1,16 +1,19 @@
 package com.example.myapplication
 
+import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.TaskStackBuilder
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import kotlinx.android.synthetic.main.activity_sixth.*
@@ -19,9 +22,10 @@ import kotlinx.android.synthetic.main.custom_toast.*
 @Suppress("DEPRECATION")
 class SixthActivity : AppCompatActivity() {
 
-    val CHANNEL_ID = "channelID"
-    val CHANNEL_NAME = "chanelNAME"
-    val NOTIFICATION_ID = 0
+    private val channelId = "channelID"
+    private val channelName = "chanelNAME"
+    private val notificationId = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sixth)
@@ -29,24 +33,36 @@ class SixthActivity : AppCompatActivity() {
         createNotificationChannel()
 
         val intent = Intent(this, SixthActivity::class.java)
-        val pandingIntent = TaskStackBuilder.create(this).run{
+        val pendingIntent = TaskStackBuilder.create(this).run {
             addNextIntentWithParentStack(intent)
-            getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
-
+            // add FLAG_IMMUTABLE to the pending intent
+            getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         }
 
-        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+        val notification = NotificationCompat.Builder(this, channelId)
             .setContentTitle("Awesome notification")
             .setContentText("This is the content text")
             .setSmallIcon(R.drawable.ic_star)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setContentIntent(pandingIntent)
+            .setContentIntent(pendingIntent)
             .build()
 
         val notificationManager = NotificationManagerCompat.from(this)
 
         btnShowNotifications.setOnClickListener {
-            notificationManager.notify(NOTIFICATION_ID, notification)
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    notificationId
+                )
+                return@setOnClickListener
+            }
+            notificationManager.notify(notificationId, notification)
         }
 
         btnShowToast.setOnClickListener {
@@ -56,16 +72,17 @@ class SixthActivity : AppCompatActivity() {
                 show()
             }
         }
+
         btnBack6.setOnClickListener {
             finish()
         }
     }
 
-    fun createNotificationChannel(){
+    private fun createNotificationChannel(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val channel = NotificationChannel(CHANNEL_ID,CHANNEL_NAME,
+            val channel = NotificationChannel(channelId, channelName,
                 NotificationManager.IMPORTANCE_DEFAULT).apply {
-                    lightColor = Color.GREEN
+                lightColor = Color.GREEN
                 enableLights(true)
             }
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
