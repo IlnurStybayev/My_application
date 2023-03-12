@@ -10,11 +10,22 @@ class FifteenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifteen)
 
-        btnStart15.setOnClickListener {
+        btnStartIntentService.setOnClickListener {
             try {
                 Intent(this, MyIntentService::class.java).also{
                     startService(it)
-                    tvServiceStopped.text = "Service running"
+                    tvIntentService.text = "Service running"
+                }
+            } catch (e: Exception) {
+                // Handle the exception appropriately
+                e.printStackTrace()
+            }
+        }
+        btnStartMyService.setOnClickListener {
+            try {
+                Intent(this, MyService::class.java).also{
+                    startService(it)
+                    tvMyServiceStatus.text = "My Service running"
                 }
             } catch (e: Exception) {
                 // Handle the exception appropriately
@@ -22,13 +33,34 @@ class FifteenActivity : AppCompatActivity() {
             }
         }
 
-        btnStop15.setOnClickListener {
+        btnStopIntentService.setOnClickListener {
             try {
                 MyIntentService.stopService()
-                tvServiceStopped.text = "Service stopped"
+                tvIntentService.text = "Service stopped"
             } catch (e: Exception) {
                 // Handle the exception appropriately
                 e.printStackTrace()
+            }
+        }
+
+        btnStopMyService.setOnClickListener {
+            try {
+                Intent(this, MyService::class.java).also{
+                stopService(it)
+                tvMyServiceStatus.text = "Service stopped"
+                }
+            }
+            catch (e: Exception) {
+                // Handle the exception appropriately
+                e.printStackTrace()
+            }
+        }
+
+        btnSendData.setOnClickListener {
+            Intent(this, MyService::class.java).also{
+                val dataString = etDataString.text.toString()
+                it.putExtra("EXTRA_DATA", dataString)
+                startService(it)
             }
         }
 

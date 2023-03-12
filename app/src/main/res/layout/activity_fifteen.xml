@@ -7,35 +7,87 @@
     tools:context=".FifteenActivity">
 
     <Button
-        android:id="@+id/btnStart15"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnStartIntentService"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Start"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack15"
-        app:layout_constraintEnd_toStartOf="@+id/btnStop15"
+        android:gravity="left|center_vertical"
+        android:text="Start Intent Service"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvServiceStopped" />
+        app:layout_constraintTop_toBottomOf="@+id/tvIntentService" />
 
     <Button
-        android:id="@+id/btnStop15"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnStartMyService"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Stop"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack15"
+        android:gravity="left|center_vertical"
+        android:text="Start My Service"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnStart15"
-        app:layout_constraintTop_toBottomOf="@+id/tvServiceStopped" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyServiceStatus" />
 
-    <TextView
-        android:id="@+id/tvServiceStopped"
+    <Button
+        android:id="@+id/btnStopIntentService"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="Stop Intent Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartIntentService" />
+
+    <Button
+        android:id="@+id/btnStopMyService"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="Stop My Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartMyService" />
+
+    <Button
+        android:id="@+id/btnSendData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Service stopped"
+        android:text="Send Data"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDataString" />
+
+    <TextView
+        android:id="@+id/tvIntentService"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Intent Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMyServiceStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="My Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <EditText
+        android:id="@+id/etDataString"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Data string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStopMyService" />
+
 
     <Button
         android:id="@+id/btnBack15"
@@ -46,5 +98,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.500684" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
