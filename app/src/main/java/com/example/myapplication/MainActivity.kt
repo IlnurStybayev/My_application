@@ -3,6 +3,7 @@ import android.Manifest
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -23,6 +24,9 @@ import kotlinx.android.synthetic.main.main_layout.*
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
+
+    lateinit var receiver: AirplaneModeChangedReceiver
+
     //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
     lateinit var toggle: ActionBarDrawerToggle
     //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
@@ -31,6 +35,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_layout)
+
+        receiver = AirplaneModeChangedReceiver()
+        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
+            registerReceiver(receiver, it)
+        }
 
 //SLID-ABLE MENU WITH NAVIGATION DRAWER - Android Fundamentals
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
@@ -167,6 +176,11 @@ SetCurrentFragment(homeFragment)
             finish()
         }
 
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(receiver)
     }
 
 
