@@ -213,6 +213,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity14" />
 
             <Button
+                android:id="@+id/btnOpenActivity16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="15.Drag and Drop"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity15" />
+
+            <Button
                 android:id="@+id/btnEnter"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

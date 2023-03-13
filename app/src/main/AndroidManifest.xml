@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".SexteenthActivity"
+            android:exported="false" />
         <activity
             android:name=".FifteenActivity"
             android:exported="false" />
@@ -72,8 +74,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MyIntentService"/>
-        <service android:name=".MyService"/>
+
+        <service android:name=".MyIntentService" />
+        <service android:name=".MyService" />
     </application>
 
 </manifest>

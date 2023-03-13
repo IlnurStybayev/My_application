@@ -157,6 +157,11 @@ SetCurrentFragment(homeFragment)
                 startActivity(it)
             }
         }
+        btnOpenActivity16.setOnClickListener {
+            Intent(this, SexteenthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         btnEnter.setOnClickListener {
             finish()
