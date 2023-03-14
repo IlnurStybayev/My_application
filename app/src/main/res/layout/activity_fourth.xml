@@ -5,44 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="16dp"
     tools:context=".FourthActivity">
 
     <EditText
         android:id="@+id/etFirstNumber"
-        android:layout_width="409dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="First number"
+        android:textSize="16sp"
         android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etSecondNumber"
-        android:layout_width="409dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Second number"
+        android:textSize="16sp"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/etFirstNumber"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstNumber" />
 
     <Button
         android:id="@+id/btnAdd4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        app:layout_constraintStart_toStartOf="@+id/etSecondNumber"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSecondNumber" />
 
     <TextView
         android:id="@+id/tvResult"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Result"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/btnAdd4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd4" />
 
     <Button
@@ -50,6 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="GO BACK"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,6 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Clean Result"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 

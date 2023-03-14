@@ -26,7 +26,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
 
 
@@ -56,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="1.Счетчик"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity2"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -69,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="2.Анкета"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity3"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -81,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="3.Выбор картинки"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity4"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -93,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="4.Сумма двух чисел"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity5"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -105,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="5.Заказ для бургера"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity6"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -117,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="6.TOAST/Notifications"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity7"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -129,6 +136,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="7.Передать данные"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity8"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -141,6 +149,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="8.Диалоги"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity9"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -153,6 +162,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="9.Spiner"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity12"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -165,6 +175,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="10. Recyclerview"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/btnOpenActivity13"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -177,6 +188,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="11.Fragments"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -188,6 +200,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="12.View Pager"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity13" />
@@ -197,6 +210,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="13.Saving Data"
+                android:textSize="10sp"
                 android:gravity="left|center_vertical"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
@@ -208,6 +222,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="14.Service"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity14" />
@@ -218,6 +233,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="15.Drag and Drop"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnOpenActivity15" />
@@ -228,6 +244,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/holo_red_dark"
                 android:text="EXIT"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -238,6 +255,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/holo_red_dark"
                 android:text="Permission"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btnOpenActivity1"
                 app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
